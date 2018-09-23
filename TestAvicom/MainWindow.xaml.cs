@@ -50,7 +50,8 @@ namespace TestAvicom
             }
             else if (this.tabPnl.SelectedIndex == 1)
             {
-
+                this.Hide();
+                new AddEditUserWindow(this, null).Show();
             }
             else throw new Exception("Созданы новые вкладки, необработанные в коде");
         }
@@ -65,11 +66,12 @@ namespace TestAvicom
             if (this.tabPnl.SelectedIndex == 0)
             {
                 this.Hide();
-                new AddEditCompanyWindow(this, (Company)this.companyGrid.Items.CurrentItem).Show();
+                new AddEditCompanyWindow(this, (Company)this.companyGrid.SelectedItem).Show();
             }
             else if (this.tabPnl.SelectedIndex == 1)
             {
-
+                this.Hide();
+                new AddEditUserWindow(this, (User)this.userGrid.SelectedItem).Show();
             }
             else throw new Exception("Созданы новые вкладки, необработанные в коде");
         }
@@ -83,7 +85,8 @@ namespace TestAvicom
             }
             else if (this.tabPnl.SelectedIndex == 1)
             {
-
+                User selectedUser = (User)this.userGrid.SelectedItem;
+                this.db.User.Remove(selectedUser);
             }
             else throw new Exception("Созданы новые вкладки, необработанные в коде");
             db.SaveChanges();

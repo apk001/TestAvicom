@@ -64,10 +64,17 @@
     <Compile Include="AddEditCompanyWindow.xaml.cs">
       <DependentUpon>AddEditCompanyWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddEditUserWindow.xaml.cs">
+      <DependentUpon>AddEditUserWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Company.cs" />
     <Compile Include="MyDBContext.cs" />
     <Compile Include="User.cs" />
     <Page Include="AddEditCompanyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddEditUserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
