@@ -5,8 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestAvicom"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1000" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5, 2, 5, 0"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="TabControl">
+            <Setter Property="Margin" Value="5, 2, 5, 0"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
-        
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <GridSplitter />
+
+        <TabControl x:Name="tabPnl" Grid.Column="0">
+            <TabItem Header="Компании">
+                <DataGrid AutoGenerateColumns="True" x:Name="companyGrid" IsReadOnly="True"/>
+            </TabItem>
+            <TabItem Header="Пользователи">
+                <DataGrid AutoGenerateColumns="True" x:Name="userGrid" IsReadOnly="True"/>
+            </TabItem>
+        </TabControl>
+
+        <StackPanel Grid.Column="1">
+            <Button x:Name="CreateBtn" Content="Создать" Click="CreateBtn_Click"/>
+            <Button x:Name="EditBtn" Content="Редактировать" Click="EditBtn_Click"/>
+            <Button x:Name="DeleteBtn" Content="Удалить" Click="DeleteBtn_Click"/>
+        </StackPanel>
+
     </Grid>
+
 </Window>

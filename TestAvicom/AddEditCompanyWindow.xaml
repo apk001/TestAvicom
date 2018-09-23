@@ -1,0 +1,58 @@
+﻿<Window x:Class="TestAvicom.AddEditCompanyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestAvicom"
+        mc:Ignorable="d"
+        Title="AddEditCompanyWindow" Height="400" Width="1000" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5, 2, 5, 0"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="5, 2, 5, 0"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="5, 2, 5, 0"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5, 2, 5, 0"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0">Название компании</Label>
+            <Label Grid.Column="0" Grid.Row="1">Статус договора</Label>
+            <TextBox x:Name="NameTB" Grid.Column="1" Grid.Row="0" MaxLength="70" MaxLines="1"></TextBox>
+            <ComboBox x:Name="StateCB" Grid.Column="1" Grid.Row="1" SelectedIndex="0">
+                <ComboBoxItem>Еще не заключен</ComboBoxItem>
+                <ComboBoxItem>Заключен</ComboBoxItem>
+                <ComboBoxItem>Расторгнут</ComboBoxItem>
+            </ComboBox>
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="AcceptBtn" Grid.Column="0" Content="Выполнить" Click="AcceptBtn_Click"/>
+            <Button x:Name="CancelBtn" Grid.Column="1" Content="Вернуться" Click="CancelBtn_Click"/>
+        </Grid>
+    </StackPanel>
+</Window>
