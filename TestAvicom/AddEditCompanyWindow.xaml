@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestAvicom"
         mc:Ignorable="d"
-        Title="AddEditCompanyWindow" Height="400" Width="1000" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        Title="AddEditCompanyWindow" Height="200
+        " Width="1000" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
 
     <Window.Resources>
         <Style TargetType="Button">
@@ -27,7 +28,7 @@
     </Window.Resources>
 
     <StackPanel>
-        <Grid>
+        <Grid FocusManager.FocusedElement="{Binding ElementName=NameTB}">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>

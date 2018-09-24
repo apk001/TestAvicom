@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestAvicom"
         mc:Ignorable="d"
-        Title="AddEditUserWindow" Height="450" Width="800" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+        Title="AddEditUserWindow" Height="250" Width="800" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <Style TargetType="Button">
@@ -27,7 +27,7 @@
     </Window.Resources>
 
     <StackPanel>
-        <Grid>
+        <Grid FocusManager.FocusedElement="{Binding ElementName=NameTB}">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -45,9 +45,8 @@
             <TextBox x:Name="NameTB" Grid.Column="1" Grid.Row="0" MaxLength="50" MaxLines="1"></TextBox>
             <TextBox x:Name="LoginTB" Grid.Column="1" Grid.Row="1" MaxLength="25" MaxLines="1"></TextBox>
             <TextBox x:Name="PasswordTB" Grid.Column="1" Grid.Row="2" MaxLength="25" MaxLines="1"></TextBox>
-            <ComboBox x:Name="CompanyCB" Grid.Column="1" Grid.Row="3" SelectedIndex="0">
+            <ComboBox x:Name="CompanyCB" Grid.Column="1" Grid.Row="3" SelectedIndex="0"/>
 
-            </ComboBox>
         </Grid>
 
         <Grid>

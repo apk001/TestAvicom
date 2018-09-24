@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestAvicom"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1000" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        Title="TestAvicom" Height="300" Width="900" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
 
     <Window.Resources>
         <Style TargetType="Button">
@@ -26,7 +26,7 @@
         </Grid.ColumnDefinitions>
         <GridSplitter />
 
-        <TabControl x:Name="tabPnl" Grid.Column="0">
+        <TabControl x:Name="tabPnl" Grid.Column="0" SelectionChanged="tabPnl_SelectionChanged">
             <TabItem Header="Компании">
                 <DataGrid AutoGenerateColumns="True" x:Name="companyGrid" IsReadOnly="True"/>
             </TabItem>

@@ -27,7 +27,7 @@ CREATE TABLE [dbo].[Users](
 	[Company_ID] [int] NOT NULL,
 CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED ([ID]),
 CONSTRAINT [UQ_User] UNIQUE ([Name]), 
-CONSTRAINT [FK_User_Company] FOREIGN KEY([Company_ID]) REFERENCES [dbo].[Company] ([ID]))
+CONSTRAINT [FK_User_Company] FOREIGN KEY([Company_ID]) REFERENCES [dbo].[Company] ([ID])) ON DELETE CASCADE
 GO
 
 
